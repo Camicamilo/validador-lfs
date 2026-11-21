@@ -1,0 +1,8 @@
+# Lo unico obligatorio para las fases 1 a 6 es Python 3.10 o mas nuevo (solo libreria estandar).
+# Para la aplicacion web (Fase 7):
+fastapi
+uvicorn
+websockets
+# Opcionales: solo se usan como LINEA BASE para comparar (si faltan, se avisa y se sigue)
+jsonschema
+lxml

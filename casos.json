@@ -1,0 +1,1551 @@
+{
+"coleccion": "casos_de_prueba",
+"total": 143,
+"casos": [
+{
+"_id": "val-0001",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"id\": 10, \"tags\": [\"\", \"bbc\"]}"
+},
+{
+"_id": "inv-0002",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "invalido",
+"nota": "tipo en /",
+"payload": "\"x\""
+},
+{
+"_id": "inv-0003",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{\"tags\": [\"\", \"bbc\"]}"
+},
+{
+"_id": "inv-0004",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "invalido",
+"nota": "tipo en /id",
+"payload": "{\"id\": \"x\", \"tags\": [\"\", \"bbc\"]}"
+},
+{
+"_id": "val-0005",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"id\": 3}"
+},
+{
+"_id": "inv-0006",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{}"
+},
+{
+"_id": "val-0007",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"id\": 6}"
+},
+{
+"_id": "val-0008",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\"},\"tags\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"required\":[\"id\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"id\": 1}"
+},
+{
+"_id": "val-0009",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"nombre\": \"yéxéc\", \"edad\": 100, \"x\": null}"
+},
+{
+"_id": "inv-0010",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "tipo en /",
+"payload": "\"x\""
+},
+{
+"_id": "inv-0011",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{\"edad\": 100, \"x\": null}"
+},
+{
+"_id": "inv-0012",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "prohibida en /",
+"payload": "{\"nombre\": \"yéxéc\", \"edad\": 100, \"x\": null, \"__extra__\": 1}"
+},
+{
+"_id": "inv-0013",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "tipo en /nombre",
+"payload": "{\"nombre\": 2.5, \"edad\": 100, \"x\": null}"
+},
+{
+"_id": "inv-0014",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "minLength en /nombre",
+"payload": "{\"nombre\": \"a\", \"edad\": 100, \"x\": null}"
+},
+{
+"_id": "inv-0015",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "maxLength en /nombre",
+"payload": "{\"nombre\": \"aaaaaa\", \"edad\": 100, \"x\": null}"
+},
+{
+"_id": "inv-0016",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "minimum en /edad",
+"payload": "{\"nombre\": \"yéxéc\", \"edad\": -1, \"x\": null}"
+},
+{
+"_id": "inv-0017",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "maximum en /edad",
+"payload": "{\"nombre\": \"yéxéc\", \"edad\": 121, \"x\": null}"
+},
+{
+"_id": "val-0018",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"nombre\": \"  \", \"edad\": 4, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "inv-0019",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{\"edad\": 4, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "inv-0020",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "prohibida en /",
+"payload": "{\"nombre\": \"  \", \"edad\": 4, \"activo\": true, \"x\": null, \"__extra__\": 1}"
+},
+{
+"_id": "inv-0021",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "minLength en /nombre",
+"payload": "{\"nombre\": \"a\", \"edad\": 4, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "inv-0022",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "maxLength en /nombre",
+"payload": "{\"nombre\": \"aaaaaa\", \"edad\": 4, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "inv-0023",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "minimum en /edad",
+"payload": "{\"nombre\": \"  \", \"edad\": -1, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "inv-0024",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "maximum en /edad",
+"payload": "{\"nombre\": \"  \", \"edad\": 121, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "val-0025",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"nombre\": \"éc\", \"edad\": 51, \"activo\": true, \"x\": null}"
+},
+{
+"_id": "val-0026",
+"categoria": "validos",
+"sub": "simples",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"nombre\": \"bé\", \"edad\": 25, \"activo\": false, \"rol\": true}"
+},
+{
+"_id": "inv-0027",
+"categoria": "invalidos",
+"sub": "enum",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "enum en /rol",
+"payload": "{\"nombre\": \"bé\", \"edad\": 25, \"activo\": false, \"rol\": \"__no____\"}"
+},
+{
+"_id": "inv-0028",
+"categoria": "invalidos",
+"sub": "enum",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "enum en /rol",
+"payload": "{\"nombre\": \"zyxb\", \"edad\": 8, \"activo\": false, \"x\": null, \"rol\": \"__no____\"}"
+},
+{
+"_id": "val-0029",
+"categoria": "validos",
+"sub": "anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"cliente\": {\"nombre\": \"écbz\", \"dir\": {\"ciudad\": \"az\", \"cp\": 8}}, \"items\": [{\"sku\": \"xcb\", \"cant\": 90}]}"
+},
+{
+"_id": "inv-0030",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "tipo en /",
+"payload": "\"x\""
+},
+{
+"_id": "inv-0031",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{\"items\": [{\"sku\": \"xcb\", \"cant\": 90}]}"
+},
+{
+"_id": "inv-0032",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "tipo en /cliente",
+"payload": "{\"cliente\": \"x\", \"items\": [{\"sku\": \"xcb\", \"cant\": 90}]}"
+},
+{
+"_id": "inv-0033",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "requeridos en /cliente",
+"payload": "{\"cliente\": {\"dir\": {\"ciudad\": \"az\", \"cp\": 8}}, \"items\": [{\"sku\": \"xcb\", \"cant\": 90}]}"
+},
+{
+"_id": "inv-0034",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "minimum en /cliente/dir/cp",
+"payload": "{\"cliente\": {\"nombre\": \"écbz\", \"dir\": {\"ciudad\": \"az\", \"cp\": -1}}, \"items\": [{\"sku\": \"xcb\", \"cant\": 90}]}"
+},
+{
+"_id": "inv-0035",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "minItems en /items",
+"payload": "{\"cliente\": {\"nombre\": \"écbz\", \"dir\": {\"ciudad\": \"az\", \"cp\": 8}}, \"items\": []}"
+},
+{
+"_id": "inv-0036",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "prohibida en /items/0",
+"payload": "{\"cliente\": {\"nombre\": \"écbz\", \"dir\": {\"ciudad\": \"az\", \"cp\": 8}}, \"items\": [{\"sku\": \"xcb\", \"cant\": 90, \"__extra__\": 1}]}"
+},
+{
+"_id": "inv-0037",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "minimum en /items/0/cant",
+"payload": "{\"cliente\": {\"nombre\": \"écbz\", \"dir\": {\"ciudad\": \"az\", \"cp\": 8}}, \"items\": [{\"sku\": \"xcb\", \"cant\": 0}]}"
+},
+{
+"_id": "inv-0038",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "maximum en /items/0/cant",
+"payload": "{\"cliente\": {\"nombre\": \"écbz\", \"dir\": {\"ciudad\": \"az\", \"cp\": 8}}, \"items\": [{\"sku\": \"xcb\", \"cant\": 100}]}"
+},
+{
+"_id": "val-0039",
+"categoria": "validos",
+"sub": "anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"cliente\": {\"nombre\": \"ycy\", \"dir\": {\"ciudad\": \"\", \"cp\": 6}}, \"items\": [{\"sku\": \"z ay\", \"cant\": 97}, {\"sku\": \"\", \"cant\": 46}, {\"sku\": \" axx a\", \"cant\": 59}, {\"sku\": \"\", \"cant\": 45}], \"extra_4\": true}"
+},
+{
+"_id": "inv-0040",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "minItems en /items",
+"payload": "{\"cliente\": {\"nombre\": \"ycy\", \"dir\": {\"ciudad\": \"\", \"cp\": 6}}, \"items\": [], \"extra_4\": true}"
+},
+{
+"_id": "inv-0041",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "prohibida en /items/0",
+"payload": "{\"cliente\": {\"nombre\": \"ycy\", \"dir\": {\"ciudad\": \"\", \"cp\": 6}}, \"items\": [{\"sku\": \"z ay\", \"cant\": 97, \"__extra__\": 1}, {\"sku\": \"\", \"cant\": 46}, {\"sku\": \" axx a\", \"cant\": 59}, {\"sku\": \"\", \"cant\": 45}], \"extra_4\": true}"
+},
+{
+"_id": "inv-0042",
+"categoria": "invalidos",
+"sub": "rangos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "invalido",
+"nota": "maximum en /items/0/cant",
+"payload": "{\"cliente\": {\"nombre\": \"ycy\", \"dir\": {\"ciudad\": \"\", \"cp\": 6}}, \"items\": [{\"sku\": \"z ay\", \"cant\": 100}, {\"sku\": \"\", \"cant\": 46}, {\"sku\": \" axx a\", \"cant\": 59}, {\"sku\": \"\", \"cant\": 45}], \"extra_4\": true}"
+},
+{
+"_id": "val-0043",
+"categoria": "validos",
+"sub": "anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"cliente\": {\"nombre\": \"cxba\", \"extra_8\": 7}, \"items\": [{\"sku\": \"yééb\", \"cant\": 15}]}"
+},
+{
+"_id": "val-0044",
+"categoria": "validos",
+"sub": "anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"cliente\":{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\"},\"dir\":{\"type\":\"object\",\"properties\":{\"ciudad\":{\"type\":\"string\"},\"cp\":{\"type\":\"integer\",\"minimum\":0}},\"required\":[\"ciudad\"]}},\"required\":[\"nombre\"]},\"items\":{\"type\":\"array\",\"minItems\":1,\"items\":{\"type\":\"object\",\"properties\":{\"sku\":{\"type\":\"string\"},\"cant\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":99}},\"required\":[\"sku\",\"cant\"],\"additionalProperties\":false}}},\"required\":[\"cliente\",\"items\"]}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"cliente\": {\"nombre\": \"z\", \"dir\": {\"ciudad\": \" \", \"cp\": 0, \"extra_6\": 7}}, \"items\": [{\"sku\": \"a\", \"cant\": 97}, {\"sku\": \"x zb\", \"cant\": 5}, {\"sku\": \"axxé a\", \"cant\": 60}]}"
+},
+{
+"_id": "val-0045",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 0, \"hijos\": [{\"v\": 3}, {\"v\": 9, \"hijos\": []}, {\"v\": 6}]}"
+},
+{
+"_id": "inv-0046",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "invalido",
+"nota": "tipo en /",
+"payload": "\"x\""
+},
+{
+"_id": "inv-0047",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{\"hijos\": [{\"v\": 3}, {\"v\": 9, \"hijos\": []}, {\"v\": 6}]}"
+},
+{
+"_id": "inv-0048",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "invalido",
+"nota": "prohibida en /",
+"payload": "{\"v\": 0, \"hijos\": [{\"v\": 3}, {\"v\": 9, \"hijos\": []}, {\"v\": 6}], \"__extra__\": 1}"
+},
+{
+"_id": "inv-0049",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "invalido",
+"nota": "tipo en /v",
+"payload": "{\"v\": \"x\", \"hijos\": [{\"v\": 3}, {\"v\": 9, \"hijos\": []}, {\"v\": 6}]}"
+},
+{
+"_id": "inv-0050",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "invalido",
+"nota": "requeridos en /hijos/0",
+"payload": "{\"v\": 0, \"hijos\": [{}, {\"v\": 9, \"hijos\": []}, {\"v\": 6}]}"
+},
+{
+"_id": "inv-0051",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "invalido",
+"nota": "prohibida en /hijos/0",
+"payload": "{\"v\": 0, \"hijos\": [{\"v\": 3, \"__extra__\": 1}, {\"v\": 9, \"hijos\": []}, {\"v\": 6}]}"
+},
+{
+"_id": "val-0052",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 0}"
+},
+{
+"_id": "val-0053",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 10}"
+},
+{
+"_id": "val-0054",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"$defs\":{\"nodo\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"hijos\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/nodo\"}}},\"required\":[\"v\"],\"additionalProperties\":false}},\"$ref\":\"#/$defs/nodo\"}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 9, \"hijos\": [{\"v\": 7}, {\"v\": 10, \"hijos\": [{\"v\": 9}]}]}"
+},
+{
+"_id": "val-0055",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 3, \"sig\": {\"v\": 10, \"sig\": {\"v\": 0, \"sig\": {\"v\": 8}}}}"
+},
+{
+"_id": "inv-0056",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "tipo en /",
+"payload": "\"x\""
+},
+{
+"_id": "inv-0057",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "requeridos en /",
+"payload": "{\"sig\": {\"v\": 10, \"sig\": {\"v\": 0, \"sig\": {\"v\": 8}}}}"
+},
+{
+"_id": "inv-0058",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "prohibida en /",
+"payload": "{\"v\": 3, \"sig\": {\"v\": 10, \"sig\": {\"v\": 0, \"sig\": {\"v\": 8}}}, \"__extra__\": 1}"
+},
+{
+"_id": "inv-0059",
+"categoria": "invalidos",
+"sub": "tipos",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "tipo en /v",
+"payload": "{\"v\": \"x\", \"sig\": {\"v\": 10, \"sig\": {\"v\": 0, \"sig\": {\"v\": 8}}}}"
+},
+{
+"_id": "inv-0060",
+"categoria": "invalidos",
+"sub": "required",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "requeridos en /sig",
+"payload": "{\"v\": 3, \"sig\": {\"sig\": {\"v\": 0, \"sig\": {\"v\": 8}}}}"
+},
+{
+"_id": "inv-0061",
+"categoria": "invalidos",
+"sub": "additionalProperties",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "prohibida en /sig",
+"payload": "{\"v\": 3, \"sig\": {\"v\": 10, \"sig\": {\"v\": 0, \"sig\": {\"v\": 8}}, \"__extra__\": 1}}"
+},
+{
+"_id": "val-0062",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 10, \"sig\": {\"v\": 9}}"
+},
+{
+"_id": "val-0063",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 1, \"sig\": {\"v\": 3, \"sig\": {\"v\": 1}}}"
+},
+{
+"_id": "val-0064",
+"categoria": "validos",
+"sub": "recursivos ($ref)",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "",
+"payload": "{\"v\": 4}"
+},
+{
+"_id": "val-0065",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "valido",
+"nota": "",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"xbb\"><titulo>by</titulo><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"nuevo\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro></biblioteca>"
+},
+{
+"_id": "inv-0066",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "invalido",
+"nota": "falta un atributo obligatorio",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro><titulo>by</titulo><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"nuevo\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro></biblioteca>"
+},
+{
+"_id": "inv-0067",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "invalido",
+"nota": "atributo no declarado",
+"raiz": "biblioteca",
+"payload": "<biblioteca zz=\"1\"><libro id=\"xbb\"><titulo>by</titulo><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"nuevo\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro></biblioteca>"
+},
+{
+"_id": "inv-0068",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "invalido",
+"nota": "atributo fuera de la enumeracion",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"xbb\"><titulo>by</titulo><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"__no__\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro></biblioteca>"
+},
+{
+"_id": "inv-0069",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "invalido",
+"nota": "hijo no permitido",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"xbb\"><titulo>by</titulo><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"nuevo\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro><zzz/></biblioteca>"
+},
+{
+"_id": "inv-0070",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "invalido",
+"nota": "texto donde solo van elementos",
+"raiz": "biblioteca",
+"payload": "<biblioteca>hola<libro id=\"xbb\"><titulo>by</titulo><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"nuevo\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro></biblioteca>"
+},
+{
+"_id": "inv-0071",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "invalido",
+"nota": "falta un hijo obligatorio",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"xbb\"><autor>zaxx</autor><resumen>texto <i>az</i></resumen><resumen>texto <i>x</i>texto <i>c</i></resumen></libro><libro id=\"byaya\" estado=\"nuevo\"><titulo>xzyxc</titulo><autor>bbya</autor><nota/><resumen><b>ycy</b><b>c</b></resumen></libro><libro id=\"zxb\"><titulo>za</titulo><autor>ca</autor></libro><libro id=\"yx\"><titulo>yxxx</titulo><autor>aczaa</autor></libro></biblioteca>"
+},
+{
+"_id": "val-0072",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "valido",
+"nota": "",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"yx\"><titulo>ab</titulo><autor>zyaz</autor></libro></biblioteca>"
+},
+{
+"_id": "val-0073",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "valido",
+"nota": "",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"z\"><titulo>y</titulo><autor>bbcxx</autor></libro></biblioteca>"
+},
+{
+"_id": "val-0074",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "valido",
+"nota": "",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"xbxa\" estado=\"usado\"><titulo>xyzazx</titulo><autor>xba</autor></libro><libro id=\"za\"><titulo>cxyazy</titulo><autor>bcyxz</autor><autor>c</autor><anio>cxbzca</anio><resumen><i>cczabx</i>texto <i>yxzy</i><i>yczxb</i>texto <b>x</b><i>y</i></resumen><resumen><i>cczxb</i><b>xbbyyb</b><b>azby</b><b>ay</b></resumen></libro></biblioteca>"
+},
+{
+"_id": "mal-0075",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "dos raices",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"a\"><titulo>cxyb</titulo><autor>zc</autor><resumen><i>cxx</i><b>xcbyza</b><i>xbyyz</i><b>a</b>texto <i>xcbaaa</i><b>a</b></resumen><nota/><nota tipo=\"info\"/></libro></biblioteca><biblioteca><libro id=\"a\"><titulo>cxyb</titulo><autor>zc</autor><resumen><i>cxx</i><b>xcbyza</b><i>xbyyz</i><b>a</b>texto <i>xcbaaa</i><b>a</b></resumen><nota/><nota tipo=\"info\"/></libro></biblioteca>"
+},
+{
+"_id": "mal-0076",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "entidad no declarada",
+"raiz": "biblioteca",
+"payload": "<biblioteca>&bomba;<libro id=\"a\"><titulo>cxyb</titulo><autor>zc</autor><resumen><i>cxx</i><b>xcbyza</b><i>xbyyz</i><b>a</b>texto <i>xcbaaa</i><b>a</b></resumen><nota/><nota tipo=\"info\"/></libro></biblioteca>"
+},
+{
+"_id": "mal-0077",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "cierre cruzado",
+"raiz": "biblioteca",
+"payload": "<a><b></a></b>"
+},
+{
+"_id": "mal-0078",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "texto fuera de la raiz",
+"raiz": "biblioteca",
+"payload": "hola<biblioteca><libro id=\"a\"><titulo>cxyb</titulo><autor>zc</autor><resumen><i>cxx</i><b>xcbyza</b><i>xbyyz</i><b>a</b>texto <i>xcbaaa</i><b>a</b></resumen><nota/><nota tipo=\"info\"/></libro></biblioteca>"
+},
+{
+"_id": "mal-0079",
+"categoria": "malformados",
+"sub": "etiquetas XML sin cerrar",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "etiqueta sin cerrar",
+"raiz": "biblioteca",
+"payload": "<biblioteca><libro id=\"a\"><titulo>cxyb</titulo><autor>zc</autor><resumen><i>cxx</i><b>xcbyza</b><i>xbyyz</i><b>a</b>texto <i>xcbaaa</i><b>a</b></resumen><nota/><nota tipo=\"info\"/></libro>"
+},
+{
+"_id": "val-0080",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "valido",
+"nota": "",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"USD\"><cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "inv-0081",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "falta un atributo obligatorio",
+"raiz": "pedido",
+"payload": "<pedido moneda=\"USD\"><cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "inv-0082",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "atributo no declarado",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"USD\" zz=\"1\"><cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "inv-0083",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "atributo fuera de la enumeracion",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"__no__\"><cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "inv-0084",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "hijo no permitido",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"USD\"><cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/><zzz/></pedido>"
+},
+{
+"_id": "inv-0085",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "texto donde solo van elementos",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"USD\">hola<cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "inv-0086",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "tipo simple incorrecto",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"USD\"><cliente>za</cliente><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>__no__</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "inv-0087",
+"categoria": "invalidos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "invalido",
+"nota": "falta un hijo obligatorio",
+"raiz": "pedido",
+"payload": "<pedido id=\"7\" moneda=\"USD\"><item sku=\"by\"><nombre>zaxxx</nombre><cantidad>16</cantidad><precio>91</precio></item><urgente/></pedido>"
+},
+{
+"_id": "val-0088",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "valido",
+"nota": "",
+"raiz": "pedido",
+"payload": "<pedido id=\"13\" moneda=\"USD\"><cliente>caaxyx</cliente><item sku=\"acbzax\"><nombre>byayax</nombre><cantidad>5</cantidad><precio>746</precio></item><urgente/></pedido>"
+},
+{
+"_id": "val-0089",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "valido",
+"nota": "",
+"raiz": "pedido",
+"payload": "<pedido id=\"13\" moneda=\"COP\"><cliente>czxyyb</cliente><item sku=\"cy\"><nombre>zayzyb</nombre><cantidad>8</cantidad><precio>351</precio></item></pedido>"
+},
+{
+"_id": "val-0090",
+"categoria": "validos",
+"sub": "XML",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "valido",
+"nota": "",
+"raiz": "pedido",
+"payload": "<pedido id=\"8\" moneda=\"USD\"><cliente>xabzab</cliente><item sku=\"aax\"><nombre>byxbbxyx</nombre><cantidad>14</cantidad></item></pedido>"
+},
+{
+"_id": "mal-0091",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "mal_formado",
+"nota": "dos raices",
+"raiz": "pedido",
+"payload": "<pedido id=\"11\"><cliente>xbxyya</cliente><item sku=\"ax\"><nombre>ayccc</nombre><cantidad>9</cantidad><precio>250</precio></item><urgente/></pedido><pedido id=\"11\"><cliente>xbxyya</cliente><item sku=\"ax\"><nombre>ayccc</nombre><cantidad>9</cantidad><precio>250</precio></item><urgente/></pedido>"
+},
+{
+"_id": "mal-0092",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "mal_formado",
+"nota": "entidad no declarada",
+"raiz": "pedido",
+"payload": "<pedido id=\"11\">&bomba;<cliente>xbxyya</cliente><item sku=\"ax\"><nombre>ayccc</nombre><cantidad>9</cantidad><precio>250</precio></item><urgente/></pedido>"
+},
+{
+"_id": "mal-0093",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "mal_formado",
+"nota": "cierre cruzado",
+"raiz": "pedido",
+"payload": "<a><b></a></b>"
+},
+{
+"_id": "mal-0094",
+"categoria": "malformados",
+"sub": "XML: sintaxis",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "mal_formado",
+"nota": "texto fuera de la raiz",
+"raiz": "pedido",
+"payload": "hola<pedido id=\"11\"><cliente>xbxyya</cliente><item sku=\"ax\"><nombre>ayccc</nombre><cantidad>9</cantidad><precio>250</precio></item><urgente/></pedido>"
+},
+{
+"_id": "mal-0095",
+"categoria": "malformados",
+"sub": "etiquetas XML sin cerrar",
+"formato": "xml-xsd",
+"esquema": "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"pedido\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"cliente\" type=\"xs:string\"/>\n        <xs:element name=\"item\" minOccurs=\"1\" maxOccurs=\"3\">\n          <xs:complexType>\n            <xs:sequence>\n              <xs:element name=\"nombre\" type=\"nombreCorto\"/>\n              <xs:element name=\"cantidad\" type=\"xs:positiveInteger\"/>\n              <xs:element name=\"precio\" type=\"precio\" minOccurs=\"0\"/>\n            </xs:sequence>\n            <xs:attribute name=\"sku\" type=\"xs:string\" use=\"required\"/>\n          </xs:complexType>\n        </xs:element>\n        <xs:choice minOccurs=\"0\">\n          <xs:element name=\"urgente\"><xs:complexType/></xs:element>\n          <xs:element name=\"nota\" type=\"xs:string\"/>\n        </xs:choice>\n      </xs:sequence>\n      <xs:attribute name=\"id\" type=\"xs:integer\" use=\"required\"/>\n      <xs:attribute name=\"moneda\" type=\"moneda\"/>\n    </xs:complexType>\n  </xs:element>\n  <xs:simpleType name=\"nombreCorto\">\n    <xs:restriction base=\"xs:string\"><xs:minLength value=\"2\"/><xs:maxLength value=\"8\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"precio\">\n    <xs:restriction base=\"xs:decimal\"><xs:minInclusive value=\"0\"/><xs:maxInclusive value=\"1000\"/></xs:restriction>\n  </xs:simpleType>\n  <xs:simpleType name=\"moneda\">\n    <xs:restriction base=\"xs:string\"><xs:enumeration value=\"COP\"/><xs:enumeration value=\"USD\"/></xs:restriction>\n  </xs:simpleType>\n</xs:schema>",
+"esperado": "mal_formado",
+"nota": "etiqueta sin cerrar",
+"raiz": "pedido",
+"payload": "<pedido id=\"11\"><cliente>xbxyya</cliente><item sku=\"ax\"><nombre>ayccc</nombre><cantidad>9</cantidad><precio>250</precio></item><urgente/>"
+},
+{
+"_id": "mal-0096",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "sobra un cierre",
+"payload": "{\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\"}}"
+},
+{
+"_id": "mal-0097",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "arreglo sin cerrar",
+"payload": "[{\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\"}"
+},
+{
+"_id": "mal-0098",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "dos valores seguidos",
+"payload": "{\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\"} {\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\"}"
+},
+{
+"_id": "mal-0099",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "documento cortado",
+"payload": "{\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\""
+},
+{
+"_id": "mal-0100",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "coma sobrante",
+"payload": "{\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\",}"
+},
+{
+"_id": "mal-0101",
+"categoria": "malformados",
+"sub": "UTF-8 invalido",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "UTF-8 invalido",
+"payload_b64": "eyL/bm9tYnJlIjogImFuYSIsICJlZGFkIjogMzAsICJyb2wiOiAiYWRtaW4ifQ=="
+},
+{
+"_id": "mal-0102",
+"categoria": "malformados",
+"sub": "claves duplicadas",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "el DPDA la reporta como violacion (bit repetido en la mascara del objeto)",
+"payload": "{\"nombre\": \"ana\", \"edad\": 30, \"rol\": \"admin\",\"nombre\":\"ana\"}"
+},
+{
+"_id": "mal-0103",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "cero a la izquierda",
+"payload": "{\"a\":01}"
+},
+{
+"_id": "mal-0104",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "coma final en arreglo",
+"payload": "[1,]"
+},
+{
+"_id": "mal-0105",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "faltan los dos puntos",
+"payload": "{\"a\" 1}"
+},
+{
+"_id": "mal-0106",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "literal incompleto",
+"payload": "nul"
+},
+{
+"_id": "mal-0107",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "cadena sin cerrar",
+"payload": "\"abc"
+},
+{
+"_id": "mal-0108",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "escape invalido",
+"payload": "\"\\x\""
+},
+{
+"_id": "mal-0109",
+"categoria": "malformados",
+"sub": "sintaxis",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "vacio",
+"payload": ""
+},
+{
+"_id": "mal-0110",
+"categoria": "malformados",
+"sub": "UTF-8 invalido",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"nombre\":{\"type\":\"string\",\"minLength\":2,\"maxLength\":5},\"edad\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":120},\"activo\":{\"type\":\"boolean\"},\"x\":{\"type\":\"null\"},\"rol\":{\"enum\":[\"admin\",\"user\",7,null,true]}},\"required\":[\"nombre\",\"edad\"],\"additionalProperties\":false}",
+"esperado": "mal_formado",
+"nota": "secuencia de 2 bytes mal continuada",
+"payload_b64": "eyJub21icmUiOiLDKCIsImVkYWQiOjF9"
+},
+{
+"_id": "fue-0111",
+"categoria": "fuera",
+"sub": "anyOf",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]}}}",
+"esperado": "valido",
+"nota": "cumple tambien la regla que no se revisa",
+"clave_roja": "anyOf",
+"payload": "{\"v\":\"x\"}"
+},
+{
+"_id": "fue-0112",
+"categoria": "fuera",
+"sub": "anyOf",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]}}}",
+"esperado": "no_comprobado",
+"nota": "viola solo 'anyOf': el DPDA avisa FUERA y no lo revisa; la linea base si lo rechaza",
+"clave_roja": "anyOf",
+"payload": "{\"v\":true}"
+},
+{
+"_id": "fue-0113",
+"categoria": "fuera",
+"sub": "oneOf",
+"formato": "json",
+"esquema": "{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"number\"}]}",
+"esperado": "valido",
+"nota": "cumple tambien la regla que no se revisa",
+"clave_roja": "oneOf",
+"payload": "3.5"
+},
+{
+"_id": "fue-0114",
+"categoria": "fuera",
+"sub": "oneOf",
+"formato": "json",
+"esquema": "{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"number\"}]}",
+"esperado": "no_comprobado",
+"nota": "viola solo 'oneOf': el DPDA avisa FUERA y no lo revisa; la linea base si lo rechaza",
+"clave_roja": "oneOf",
+"payload": "3"
+},
+{
+"_id": "fue-0115",
+"categoria": "fuera",
+"sub": "pattern",
+"formato": "json",
+"esquema": "{\"type\":\"string\",\"pattern\":\"^[a-z]+$\"}",
+"esperado": "valido",
+"nota": "cumple tambien la regla que no se revisa",
+"clave_roja": "pattern",
+"payload": "\"abc\""
+},
+{
+"_id": "fue-0116",
+"categoria": "fuera",
+"sub": "pattern",
+"formato": "json",
+"esquema": "{\"type\":\"string\",\"pattern\":\"^[a-z]+$\"}",
+"esperado": "no_comprobado",
+"nota": "viola solo 'pattern': el DPDA avisa FUERA y no lo revisa; la linea base si lo rechaza",
+"clave_roja": "pattern",
+"payload": "\"ABC\""
+},
+{
+"_id": "fue-0117",
+"categoria": "fuera",
+"sub": "uniqueItems",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"integer\"},\"uniqueItems\":true}",
+"esperado": "valido",
+"nota": "cumple tambien la regla que no se revisa",
+"clave_roja": "uniqueItems",
+"payload": "[1,2]"
+},
+{
+"_id": "fue-0118",
+"categoria": "fuera",
+"sub": "uniqueItems",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"integer\"},\"uniqueItems\":true}",
+"esperado": "no_comprobado",
+"nota": "viola solo 'uniqueItems': el DPDA avisa FUERA y no lo revisa; la linea base si lo rechaza",
+"clave_roja": "uniqueItems",
+"payload": "[1,1]"
+},
+{
+"_id": "bom-0119",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "k=1",
+"fabrica": [
+"bombeo_objetos",
+1
+]
+},
+{
+"_id": "bom-0120",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "k=1, el nodo del fondo esta mal",
+"fabrica": [
+"bombeo_objetos",
+1,
+true
+]
+},
+{
+"_id": "bom-0121",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "valido",
+"nota": "k=1",
+"fabrica": [
+"bombeo_arreglos",
+1
+]
+},
+{
+"_id": "bom-0122",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "mal_formado",
+"nota": "k=1, falta un cierre",
+"fabrica": [
+"bombeo_arreglos",
+1,
+true
+]
+},
+{
+"_id": "bom-0123",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "k=10",
+"fabrica": [
+"bombeo_objetos",
+10
+]
+},
+{
+"_id": "bom-0124",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "k=10, el nodo del fondo esta mal",
+"fabrica": [
+"bombeo_objetos",
+10,
+true
+]
+},
+{
+"_id": "bom-0125",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "valido",
+"nota": "k=10",
+"fabrica": [
+"bombeo_arreglos",
+10
+]
+},
+{
+"_id": "bom-0126",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "mal_formado",
+"nota": "k=10, falta un cierre",
+"fabrica": [
+"bombeo_arreglos",
+10,
+true
+]
+},
+{
+"_id": "bom-0127",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "k=100",
+"fabrica": [
+"bombeo_objetos",
+100
+]
+},
+{
+"_id": "bom-0128",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "k=100, el nodo del fondo esta mal",
+"fabrica": [
+"bombeo_objetos",
+100,
+true
+]
+},
+{
+"_id": "bom-0129",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "valido",
+"nota": "k=100",
+"fabrica": [
+"bombeo_arreglos",
+100
+]
+},
+{
+"_id": "bom-0130",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "mal_formado",
+"nota": "k=100, falta un cierre",
+"fabrica": [
+"bombeo_arreglos",
+100,
+true
+]
+},
+{
+"_id": "bom-0131",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "valido",
+"nota": "k=1000",
+"fabrica": [
+"bombeo_objetos",
+1000
+]
+},
+{
+"_id": "bom-0132",
+"categoria": "bombeo",
+"sub": "objetos anidados",
+"formato": "json",
+"esquema": "{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"integer\"},\"sig\":{\"$ref\":\"#\"}},\"required\":[\"v\"],\"additionalProperties\":false}",
+"esperado": "invalido",
+"nota": "k=1000, el nodo del fondo esta mal",
+"fabrica": [
+"bombeo_objetos",
+1000,
+true
+]
+},
+{
+"_id": "bom-0133",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "valido",
+"nota": "k=1000",
+"fabrica": [
+"bombeo_arreglos",
+1000
+]
+},
+{
+"_id": "bom-0134",
+"categoria": "bombeo",
+"sub": "arreglos anidados",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "mal_formado",
+"nota": "k=1000, falta un cierre",
+"fabrica": [
+"bombeo_arreglos",
+1000,
+true
+]
+},
+{
+"_id": "bom-0135",
+"categoria": "bombeo",
+"sub": "arreglo muy largo",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"minimum\":0}}",
+"esperado": "valido",
+"nota": "100000 elementos, pila 2",
+"fabrica": [
+"arreglo_largo",
+100000
+]
+},
+{
+"_id": "ext-0136",
+"categoria": "extremos",
+"sub": "payload grande en streaming",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"minimum\":0}}",
+"esperado": "valido",
+"nota": "mas de 1 MB leido en bloques de 4096 bytes",
+"fabrica": [
+"arreglo_largo",
+300000
+]
+},
+{
+"_id": "ext-0137",
+"categoria": "extremos",
+"sub": "profundidad sobre el limite",
+"formato": "json",
+"esquema": "{\"$defs\":{\"a\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/$defs/a\"}}},\"$ref\":\"#/$defs/a\"}",
+"esperado": "limite",
+"nota": "5000 niveles con limite de 1024",
+"fabrica": [
+"bombeo_arreglos",
+5000
+],
+"limites": {
+"max_prof": 1024
+}
+},
+{
+"_id": "ext-0138",
+"categoria": "extremos",
+"sub": "limite de tamano",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"integer\",\"minimum\":0}}",
+"esperado": "limite",
+"nota": "se corta en 1000 bytes",
+"fabrica": [
+"arreglo_largo",
+5000
+],
+"limites": {
+"max_bytes": 1000
+}
+},
+{
+"_id": "ext-0139",
+"categoria": "extremos",
+"sub": "numeros enormes",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"number\",\"minimum\":0}}",
+"esperado": "valido",
+"nota": "numeros fuera del rango de 64 bits",
+"payload": "[1e400, 123456789012345678901234567890]"
+},
+{
+"_id": "ext-0140",
+"categoria": "extremos",
+"sub": "numeros enormes",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"number\",\"minimum\":0}}",
+"esperado": "invalido",
+"nota": "menor que el minimo 0",
+"payload": "[-1e400]"
+},
+{
+"_id": "ext-0141",
+"categoria": "extremos",
+"sub": "numeros enormes",
+"formato": "json",
+"esquema": "{\"type\":\"array\",\"items\":{\"type\":\"number\",\"minimum\":0}}",
+"esperado": "limite",
+"nota": "numero de 601 digitos: supera el buffer fijo de 511 caracteres",
+"payload": "[1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]"
+},
+{
+"_id": "ext-0142",
+"categoria": "extremos",
+"sub": "expansion de entidades XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "bomba de entidades: el DOCTYPE interno se rechaza, nunca se expande",
+"raiz": "biblioteca",
+"payload": "<?xml version=\"1.0\"?><!DOCTYPE biblioteca [<!ENTITY a \"aaaaaaaaaa\"><!ENTITY b \"&a;&a;&a;&a;&a;&a;&a;&a;\"><!ENTITY c \"&b;&b;&b;&b;&b;&b;&b;&b;\">]><biblioteca>&c;</biblioteca>"
+},
+{
+"_id": "ext-0143",
+"categoria": "extremos",
+"sub": "expansion de entidades XML",
+"formato": "xml-dtd",
+"esquema": "<!ELEMENT biblioteca (libro+)>\n<!ELEMENT libro (titulo, autor+, anio?, (resumen | nota)*)>\n<!ATTLIST libro id CDATA #REQUIRED estado (nuevo|usado) #IMPLIED>\n<!ELEMENT titulo (#PCDATA)>\n<!ELEMENT autor (#PCDATA)>\n<!ELEMENT anio (#PCDATA)>\n<!ELEMENT resumen (#PCDATA | b | i)*>\n<!ELEMENT nota EMPTY>\n<!ATTLIST nota tipo CDATA #FIXED \"info\">\n<!ELEMENT b (#PCDATA)>\n<!ELEMENT i (#PCDATA)>",
+"esperado": "mal_formado",
+"nota": "entidad externa (XXE): se rechaza, nunca se abre el archivo",
+"raiz": "biblioteca",
+"payload": "<?xml version=\"1.0\"?><!DOCTYPE biblioteca [<!ENTITY x SYSTEM \"file:///etc/passwd\">]><biblioteca>&x;</biblioteca>"
+}
+]
+}

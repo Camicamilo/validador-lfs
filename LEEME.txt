@@ -1,0 +1,50 @@
+PROYECTO FINAL - LENGUAJES FORMALES Y AUTOMATAS
+Validacion en tiempo real de esquemas JSON/XML con automatas de pila ponderados
+==============================================================================
+
+QUE NECESITAS
+  - Python 3.10 o mas nuevo. Las fases 1 a 6 usan solo la libreria estandar.
+  - Para la pagina web (Fase 7):   pip install fastapi uvicorn websockets
+  - Opcional, solo como linea base para comparar:   pip install jsonschema lxml
+  - Opcional: Graphviz (dibuja los automatas), gcc y rustc (compilan el codigo
+    generado). Si faltan, el programa avisa y sigue con lo demas.
+
+COMO PROBARLO
+  1) Todas las pruebas de una vez:      python correr_todo.py
+  2) La pagina web para probar grafico:  python app.py     (abre http://localhost:8000)
+  3) Un visor en un solo HTML:          python visor.py ejemplos/esquema.json ejemplos/valido.json
+
+ARCHIVOS, FASE POR FASE
+  Fase 1  lexer_v4.py        bytes -> tokens con AFD (JSON y XML), UTF-8, linea/columna/byte
+  Fase 2  parser_v2.py       gramatica libre de contexto LL(1) -> arbol de derivacion
+  Fase 3  semantico_v1.py    revisa el esquema, resuelve $ref y clasifica cada palabra clave
+  Fase 4  automata_v2.py     esquema JSON -> DPDA ponderado M = (Q, Sigma, Gamma, delta, q0, Z0, F, w)
+          xml_v1.py          XML bien formado + DTD + XSD -> ER -> AFN -> AFD minimo -> DPDA
+  Fase 5  generador_v1.py    DPDA -> validador.c y validador.rs (tablas, pila fija, sin malloc)
+          payloads_v1.py     fabrica payloads validos, invalidos, mal formados y de bombeo
+  Fase 6  tiempo_real_v1.py  validacion por bloques, limites, instrumentacion y linea base
+          casos_v1.py        casos de prueba en una coleccion local (casos.json)
+  Fase 7  app.py             pagina web: API REST + WebSocket (FastAPI)
+          visor.py           dibuja las fases 1 a 4 con el reproductor paso a paso
+          ejemplos.py        ejemplos que carga la pagina
+  Pruebas correr_todo.py, prueba_app.py y la funcion correr_pruebas() de cada archivo
+
+COMANDOS UTILES
+  python generador_v1.py ejemplos/esquema.json -o salida/gen   genera validador.c y validador.rs
+  python payloads_v1.py ejemplos/esquema.json 3                fabrica payloads de ese esquema
+  python tiempo_real_v1.py banco                               mide todo: salida/metricas.json y .svg
+  python casos_v1.py                                           corre los 143 casos en todos los motores
+  python casos_v1.py sembrar                                   vuelve a crear casos.json
+
+LO QUE NO SE HIZO (y por que)
+  - No se desplego en AWS ni Azure y la base NoSQL es un archivo local (casos.json):
+    se pidio no gastar creditos de nube. Queda un Dockerfile listo para desplegar.
+  - C y Rust se generan solo para JSON Schema. XML se valida con el DPDA en Python.
+  - No se genero WebAssembly (el enunciado lo deja opcional).
+  - anyOf, oneOf, pattern y uniqueItems se detectan y se avisan (FUERA), pero no
+    se revisan: no caben en un automata de pila determinista puro.
+
+LIMITES DEL VALIDADOR NATIVO (memoria fija)
+  64 propiedades por objeto, numeros de hasta 511 caracteres, pila de 1024
+  niveles (configurable al generar) y no detecta claves repetidas que el
+  esquema no declare.

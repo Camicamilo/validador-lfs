@@ -1,0 +1,169 @@
+{
+ "fecha": "2026-11-21 17:03",
+ "procesador_ghz": null,
+ "avisos": [
+  "dpda-c: no hay compilador de c instalado",
+  "dpda-rust: no hay compilador de rust instalado"
+ ],
+ "automata": {
+  "estados": 25,
+  "transiciones": 83,
+  "simbolos_entrada": 12,
+  "simbolos_pila": 6,
+  "simbolos_pila_con_registros": 9
+ },
+ "tamano": [
+  {
+   "kb": 16,
+   "filas": [
+    {
+     "motor": "dpda-python",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 16385,
+     "ms": 39.58,
+     "mb_s": 0.414,
+     "ciclos_byte": null,
+     "mem_pico": 293519,
+     "asignaciones": null,
+     "pila_max": 4,
+     "estados": 25,
+     "transiciones": 83,
+     "nota": "ciclos estimados con la frecuencia del procesador",
+     "fallo": null
+    },
+    {
+     "motor": "dom",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 16385,
+     "ms": 10.563,
+     "mb_s": 1.551,
+     "ciclos_byte": null,
+     "mem_pico": 155437,
+     "asignaciones": null,
+     "pila_max": 3,
+     "estados": null,
+     "transiciones": null,
+     "nota": "pila = profundidad del arbol (el DPDA cuenta ademas Z0)",
+     "fallo": null
+    }
+   ]
+  },
+  {
+   "kb": 128,
+   "filas": [
+    {
+     "motor": "dpda-python",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 131120,
+     "ms": 308.88,
+     "mb_s": 0.425,
+     "ciclos_byte": null,
+     "mem_pico": 298873,
+     "asignaciones": null,
+     "pila_max": 4,
+     "estados": 25,
+     "transiciones": 83,
+     "nota": "ciclos estimados con la frecuencia del procesador",
+     "fallo": null
+    },
+    {
+     "motor": "dom",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 131120,
+     "ms": 151.421,
+     "mb_s": 0.866,
+     "ciclos_byte": null,
+     "mem_pico": 1371738,
+     "asignaciones": null,
+     "pila_max": 3,
+     "estados": null,
+     "transiciones": null,
+     "nota": "pila = profundidad del arbol (el DPDA cuenta ademas Z0)",
+     "fallo": null
+    }
+   ]
+  }
+ ],
+ "bombeo": [
+  {
+   "k": 10,
+   "bytes": 147,
+   "filas": [
+    {
+     "motor": "dpda-python",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 147,
+     "ms": 0.65,
+     "mb_s": 0.226,
+     "ciclos_byte": null,
+     "mem_pico": 13147,
+     "asignaciones": null,
+     "pila_max": 12,
+     "estados": 18,
+     "transiciones": 50,
+     "nota": "ciclos estimados con la frecuencia del procesador",
+     "fallo": null
+    },
+    {
+     "motor": "dom",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 147,
+     "ms": 0.276,
+     "mb_s": 0.532,
+     "ciclos_byte": null,
+     "mem_pico": 23281,
+     "asignaciones": null,
+     "pila_max": 11,
+     "estados": null,
+     "transiciones": null,
+     "nota": "pila = profundidad del arbol (el DPDA cuenta ademas Z0)",
+     "fallo": null
+    }
+   ]
+  },
+  {
+   "k": 100,
+   "bytes": 1407,
+   "filas": [
+    {
+     "motor": "dpda-python",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 1407,
+     "ms": 4.869,
+     "mb_s": 0.289,
+     "ciclos_byte": null,
+     "mem_pico": 148565,
+     "asignaciones": null,
+     "pila_max": 102,
+     "estados": 18,
+     "transiciones": 50,
+     "nota": "ciclos estimados con la frecuencia del procesador",
+     "fallo": null
+    },
+    {
+     "motor": "dom",
+     "valido": true,
+     "mal_formado": false,
+     "bytes": 1407,
+     "ms": 2.989,
+     "mb_s": 0.471,
+     "ciclos_byte": null,
+     "mem_pico": 195369,
+     "asignaciones": null,
+     "pila_max": 101,
+     "estados": null,
+     "transiciones": null,
+     "nota": "pila = profundidad del arbol (el DPDA cuenta ademas Z0)",
+     "fallo": null
+    }
+   ]
+  }
+ ]
+}
