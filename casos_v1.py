@@ -32,6 +32,9 @@ import automata_v2 as A
 import xml_v1 as X
 import payloads_v1 as P
 import generador_v1 as G
+from decimal import Decimal
+
+TABLA = os.environ.get("CASOS_TABLA")   # si existe, los casos viven en DynamoDB
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 CATEGORIAS = ["validos", "invalidos", "malformados", "fuera", "bombeo", "extremos"]
@@ -40,12 +43,44 @@ CATEGORIAS = ["validos", "invalidos", "malformados", "fuera", "bombeo", "extremo
 # =========================================================================
 # 1. ALMACEN DE DOCUMENTOS (NoSQL local)
 # =========================================================================
+from decimal import Decimal
+
+TABLA = os.environ.get("CASOS_TABLA")   # si existe, los casos viven en DynamoDB
+
+
+def _normal(x):
+    """DynamoDB devuelve los numeros como Decimal: volverlos int o float."""
+    if isinstance(x, list):
+        return [_normal(v) for v in x]
+    if isinstance(x, dict):
+        return {k: _normal(v) for k, v in x.items()}
+    if isinstance(x, Decimal):
+        return int(x) if x == int(x) else float(x)
+    return x
+
+
 class Almacen:
     def __init__(self, ruta=None, nuevo=False):
         self.ruta = ruta or os.path.join(AQUI, "casos.json")
         self.docs = []
-        if not nuevo and os.path.exists(self.ruta):
+        self.tabla = None
+        if TABLA:                                        # NoSQL en la nube
+            import boto3
+            self.tabla = boto3.resource("dynamodb").Table(TABLA)
+            if not nuevo:
+                self.docs = self._leer_dynamo()
+        elif not nuevo and os.path.exists(self.ruta):    # archivo local (como antes)
             self.docs = json.load(open(self.ruta, encoding="utf-8"))["casos"]
+
+    def _leer_dynamo(self):
+        docs, args = [], {}
+        while True:                                      # scan devuelve por paginas
+            r = self.tabla.scan(**args)
+            docs += [_normal(d) for d in r["Items"]]
+            if "LastEvaluatedKey" not in r:
+                break
+            args["ExclusiveStartKey"] = r["LastEvaluatedKey"]
+        return sorted(docs, key=lambda d: int(d["_id"].split("-")[1]))   # orden original
 
     def insertar(self, **doc):
         doc = dict(_id=f"{doc['categoria'][:3]}-{len(self.docs) + 1:04d}", **doc)
@@ -59,6 +94,11 @@ class Almacen:
         return next((d for d in self.docs if d["_id"] == _id), None)
 
     def guardar(self):
+        if self.tabla is not None:
+            with self.tabla.batch_writer() as lote:
+                for d in self.docs:
+                    lote.put_item(Item=json.loads(json.dumps(d), parse_float=Decimal))
+            return
         json.dump({"coleccion": "casos_de_prueba", "total": len(self.docs), "casos": self.docs},
                   open(self.ruta, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
 
